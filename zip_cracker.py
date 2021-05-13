@@ -10,8 +10,8 @@ def extract_zip(zip_file, password):
 		pass 
 
 def main():
-	parser= optparse.OptionParser("usage%prog " +\
-		"-f <zipfile> -d <dictionary>")
+	parser= optparse.OptionParser("arguments: " +\
+		"-f <zip_file> -d <dictionary>")
 	parser.add_option('-f', dest='zfile', type='string',\
 		help="Add Zip File")
 	parser.add_option('-d', dest='dictionary', type='string',\
