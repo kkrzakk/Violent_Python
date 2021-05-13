@@ -5,17 +5,18 @@ from threading import Thread
 def extract_zip(zip_file, password):
 	try:
 		zip_file.extractall(pwd=password.encode())
-		print("[+] PASSWORD: " + password + " [+]")
+		print('[+] PASSWORD: ' + password + ' [+]')
 	except:
 		pass 
 
 def main():
-	parser= optparse.OptionParser("arguments: " +\
-		"-f <zip_file> -d <dictionary>")
+	usage='usage%prog ' +\
+		'-f <zip_file> -d <dictionary>'
+	parser= optparse.OptionParser(usage=usage)
 	parser.add_option('-f', dest='zfile', type='string',\
-		help="Add Zip File")
+		help='Add Zip File')
 	parser.add_option('-d', dest='dictionary', type='string',\
-		help="Add Dictionary")
+		help='Add Dictionary')
 	(options, args) = parser.parse_args()
 	if (options.zfile == None) | (options.dictionary == None):
 		print(parser.usage)
